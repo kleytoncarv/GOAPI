@@ -34,6 +34,11 @@ func (cd *CategoryDB) GetCategories() ([]*entity.Category, error){
 
 func (cd *CategoryDB) GetCategory(id string) (*entity.Category, error){
 	var category entity.Category
+	err := cd.db.QueryRow("SELECT id, name FROM categories WHERE id =?", id).Scan(&category.ID, &category.Name)
+	if err!= nil {
+        return nil, err
+    }
+	return &category, nil
 }
 
 func (cd *CategoryDB) CreateCategory(category *entity.Category) (string, error) {
