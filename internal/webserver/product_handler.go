@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/v5"
 	"github.com/kleytoncarv/GOAPI/internal/entity"
 	"github.com/kleytoncarv/GOAPI/internal/service"
 )
